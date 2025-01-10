@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descomplique SISU</title>
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" sizes="16x16"  href="imgs/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+    <header>
+        <a href="https://www.vinaqueiroz.com.br/intensivo">
+            <img src="imgs/img3.png" alt="Logo" id="persona">
+        </a>
+        <br>
+        <a href="index.html">
+            <img src="imgs/img1.png" alt="Logo" id="logo">
+        </a>
+    </header>
+    <div class="container">
+        <div class="decoration"></div>
+        <br>
+        <div class="box">
+            <h4>Calcule sua média</h4>
+            <br>
+            <form id="calculatorForm">
+            <div class="form-group">
+                <label for="nota1">⠀Linguagens</label>
+                <input type="number" id="nota1" placeholder="500" required>
+            </div>
+            <div class="form-group">
+                <label for="nota2">⠀Ciências Humanas</label>
+                <input type="number" id="nota2" placeholder="500" required>
+            </div>
+            <div class="form-group">
+                <label for="nota3">⠀Matemática</label>
+                <input type="number" id="nota3" placeholder="500" required>
+            </div>
+            <div class="form-group">
+                <label for="nota4">⠀Ciências da Natureza</label>
+                <input type="number" id="nota4" placeholder="500" required>
+            </div>
+            <div class="form-group">
+                <label for="nota5">⠀Redação</label>
+                <input type="number" id="nota5" placeholder="500" required>
+            </div>
+
+            <button type="submit" id="botaomedia">Calcular Média</button>
+
+            </form>
+            <br>
+            <p>Sua opção de curso possui pesos diferentes?</p>
+            <a href="mediaponderada/index.html" >
+                <button id="botaoponderada">Calcular média ponderada</button>
+            </a>
+
+            <div class="popup-overlay" id="popup">
+                <div class="popup">
+                    <p id="resultText"></p>
+                    <div class="botoes">
+                        <button onclick="closePopup()">Fechar</button>
+                        <a class="guia" href="https://www.vinaqueiroz.com.br/intensivo" title="Curso" target="_blank">
+                            <p>Conhecer meu curso</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <h4>Conheça as notas de corte:</h4>
+            <br>
+            <form method="POST" action="javascript:void(0);">
+                <select id="curso" name="curso" size="1">
+                <option value="medicina">Medicina</option>
+                <option value="biomedicina">Biomedicina</option>
+                <option value="odontologia">Odontologia</option>
+                <option value="direito">Direito</option>
+                </select><br>
+                <input id="botao1" type="submit" value="Seguir">
+            </form>          
+        </div>
+        <br>
+    </div>
+    <a class="guia" href="https://www.vinaqueiroz.com.br/intensivo" title="Curso">
+        <h3 class="guia">Conheça o meu curso</h3><p>⠀</p> <i class="fa-solid fa-share-from-square"></i>
+    </a>
+    <a class="guia" href="https://download.inep.gov.br/publicacoes/institucionais/avaliacoes_e_exames_da_educacao_basica/entenda_a_sua_nota_do_enem_guia_do_participante.pdf" target="_blank" title="Guia do Participante">
+        <h3 class="guia">Entenda a sua nota do Enem: Guia do participante</h3>
+    </a>
+    <div class="decoration2"></div>
+    <footer>
+        <a href="https://www.vinaqueiroz.com.br/intensivo">
+            <img src="imgs/img2.png" alt="Logo">
+        </a>
+        <br>
+        <p>Vina Queiroz</p><br>
+        <h3>Contato:</h3><p>(77) 98155-7103 </p><br>
+        <h4>Me siga nas redes sociais:</h4>
+    <div class="social-icons">
+        <a href="https://www.instagram.com/descompliquesuaredacao/" target="_blank" title="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com/descompliquesuaredacao" target="_blank" title="Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.youtube.com/channel/UCO58xZNKR971NquoXhllhnw" target="_blank" title="YouTube">
+          <i class="fab fa-youtube"></i>
+        </a>
+      </div>
+      <a href="https://github.com/riancesaros" id="creditos" target="_blank">
+        <p>⠀v0.3 ⠀| ⠀dev: Rian Cesar⠀</p>
+      </a>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Redirecionamento com base na seleção do curso
+            const cursoForm = document.querySelector("form[action='javascript:void(0);']");
+            cursoForm.addEventListener("submit", function (event) {
+                event.preventDefault(); // Evita o envio padrão do formulário
+    
+                const resposta = document.getElementById("curso").value;
+    
+                // Redireciona com base na resposta
+                if (resposta === "medicina") {
+                    window.location.href = "medicina/publicas/index.html";
+                } else if (resposta === "biomedicina") {
+                    window.location.href = "biomedicina/index.html";
+                } else if (resposta === "odontologia") {
+                    window.location.href = "odontologia/index.html";
+                } else if (resposta === "direito") {
+                    window.location.href = "direito/index.html";
+                }
+            });
+    
+            // Calculadora de média
+            document.getElementById("calculatorForm").addEventListener("submit", function (event) {
+                event.preventDefault();
+    
+                // Obter as notas
+                const notas = [
+                    parseFloat(document.getElementById("nota1").value),
+                    parseFloat(document.getElementById("nota2").value),
+                    parseFloat(document.getElementById("nota3").value),
+                    parseFloat(document.getElementById("nota4").value),
+                    parseFloat(document.getElementById("nota5").value),
+                ];
+    
+                // Calcular a média
+                const media = notas.reduce((acc, nota) => acc + nota, 0) / notas.length;
+    
+                // Exibir a média na popup
+                const resultText = document.getElementById("resultText");
+                resultText.textContent = `Sua média é: ${media.toFixed(2)}`;
+                document.getElementById("popup").style.display = "flex";
+            });
+    
+            // Função para fechar a popup
+            window.closePopup = function () {
+                document.getElementById("popup").style.display = "none";
+            };
+        });
+    </script>    
+</body>
+</html>

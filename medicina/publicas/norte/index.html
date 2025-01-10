@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descomplique SISU</title>
+    <link rel="stylesheet" href="../../../styles/reset.css">
+    <link rel="stylesheet" href="../../../styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" sizes="16x16"  href="imgs/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+    <header>
+        <br><img src="../../../imgs/img1.png" alt="Logo">
+    </header>
+    <div class="container">
+        <div class="decoration"></div>
+        <br>
+        <div class="box">
+            <form method="POST" action="">
+                <label for="curso">Selecione um estado: </label><br>
+                <select id="curso" name="curso" size="1">
+                <option value="acre">Acre</option>
+                <option value="amapa">Amapá</option>
+                <option value="amazonas">Amazonas</option>
+                <option value="rondonia">Rondônia</option>
+                <option value="tocantins">Tocantins</option>
+                </select><br><br>
+                <input id="botao1" type="submit" value="Seguir">
+            </form>          
+        </div>
+        <br>
+    </div>
+    <a class="guia" href="https://download.inep.gov.br/publicacoes/institucionais/avaliacoes_e_exames_da_educacao_basica/entenda_a_sua_nota_do_enem_guia_do_participante.pdf" target="_blank" title="Guia do Participante">
+        <h3 class="guia">Entenda a sua nota do Enem: Guia do participante</h3>
+    </a>
+    <div class="decoration2"></div>
+    <footer>
+        <a href="https://www.vinaqueiroz.com.br/intensivo">
+            <img src="../../../imgs/img2.png" alt="Logo">
+        </a>
+        <br><br>
+        <h3>Contato:</h3><p>(77) 98155-7103 </p><br>
+        <h4>Me siga nas redes sociais:</h4>
+    <div class="social-icons">
+        <a href="https://www.instagram.com/descompliquesuaredacao/" target="_blank" title="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com/descompliquesuaredacao" target="_blank" title="Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.youtube.com/channel/UCO58xZNKR971NquoXhllhnw" target="_blank" title="YouTube">
+          <i class="fab fa-youtube"></i>
+        </a>
+      </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.querySelector("form");
+            
+            form.addEventListener("submit", function (event) {
+                event.preventDefault(); // Evita o envio padrão do formulário
+                
+                const resposta = document.getElementById("curso").value;
+
+                // Redireciona com base na resposta
+                if (resposta === "acre") {
+                    window.location.href = "acre/index.html";
+                } else if (resposta === "amapa") {
+                    window.location.href = "amapa/index.html";
+                } else if (resposta === "amazonia") {
+                    window.location.href = "amazonia/index.html";
+                } else if (resposta === "rondonia") {
+                    window.location.href = "rondonia/index.html";
+                } else if (resposta === "tocantins") {
+                    window.location.href = "tocantins/index.html";
+                }
+            });
+        });
+    </script>
+</body>
+</html>

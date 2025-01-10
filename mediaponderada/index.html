@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descomplique SISU</title>
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/mediaponderada.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" sizes="16x16"  href="imgs/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+    <header>
+      <a href="https://www.vinaqueiroz.com.br/intensivo">
+        <img src="../imgs/img3.png" alt="Logo" id="persona">
+      </a>
+        <br><img src="../imgs/img1.png" alt="Logo" id="logo">
+    </header>
+    <div class="container">
+        <div class="decoration"></div>
+        <br>
+        <div class="box">
+            <h4>Calcule sua média com peso</h4>
+            <br>
+            <form id="calculatorForm">
+                <div class="nota-group">
+                    <div class="namegroup">
+                        <label>Linguagens</label>
+                        <input type="number" id="nota1" placeholder="500" required>
+                    </div>
+                  <div class="peso-group">
+                    <button type="button" onclick="alterarPeso('peso1', -1)"><i class="fa-solid fa-minus"></i></button>
+                    <input type="number" id="peso1" value="1" readonly>
+                    <button type="button" onclick="alterarPeso('peso1', 1)"><i class="fa-solid fa-plus"></i></button>
+                  </div>
+                </div>
+                <div class="nota-group">
+                    <div class="namegroup">
+                        <label>Ciências Humanas</label>
+                        <input type="number" id="nota2" placeholder="500" required>
+                    </div>
+                  
+                  <div class="peso-group">
+                    <button type="button" onclick="alterarPeso('peso2', -1)"><i class="fa-solid fa-minus"></i></button>
+                    <input type="number" id="peso2" value="1" readonly>
+                    <button type="button" onclick="alterarPeso('peso2', 1)"><i class="fa-solid fa-plus"></i></button>
+                  </div>
+                </div>
+                <div class="nota-group">
+                    <div class="namegroup">
+                        <label>Matemática</label>
+                        <input type="number" id="nota3" placeholder="500" required>
+                    </div>
+                  
+                  <div class="peso-group">
+                    <button type="button" onclick="alterarPeso('peso3', -1)"><i class="fa-solid fa-minus"></i></button>
+                    <input type="number" id="peso3" value="1" readonly>
+                    <button type="button" onclick="alterarPeso('peso3', 1)"><i class="fa-solid fa-plus"></i></button>
+                  </div>
+                </div>
+                <div class="nota-group">
+                    <div class="namegroup">
+                        <label>Ciências da Natureza</label>
+                        <input type="number" id="nota4" placeholder="500" required>
+                    </div>
+                  
+                  <div class="peso-group">
+                    <button type="button" onclick="alterarPeso('peso4', -1)"><i class="fa-solid fa-minus"></i></button>
+                    <input type="number" id="peso4" value="1" readonly>
+                    <button type="button" onclick="alterarPeso('peso4', 1)"><i class="fa-solid fa-plus"></i></button>
+                  </div>
+                </div>
+                <div class="nota-group">
+                    <div class="namegroup">
+                        <label>Redação</label>
+                        <input type="number" id="nota5" placeholder="500" required>
+                    </div>
+                  
+                  <div class="peso-group">
+                    <button type="button" onclick="alterarPeso('peso5', -1)"><i class="fa-solid fa-minus"></i></button>
+                    <input type="number" id="peso5" value="1" readonly>
+                    <button type="button" onclick="alterarPeso('peso5', 1)"><i class="fa-solid fa-plus"></i></button>
+                  </div>
+                </div>
+                <button type="submit" id="botaoponderada">Calcular Média</button>
+              </form>
+            
+              <div class="popup-overlay" id="popup">
+                <div class="popup">
+                  <p id="resultText"></p>
+                  <br>
+                  <div class="botoes">
+                    <button onclick="closePopup()">Fechar</button>
+                    <a class="guia" href="https://www.vinaqueiroz.com.br/intensivo" title="Curso">
+                      <p>Conhecer o meu curso</p>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            
+        </div>
+        <br>
+        <a class="voltar" href="../index.html" title="Voltar">
+          <p class="voltar">Voltar</p>
+      </a><br>
+    </div>
+    <a class="guia" href="https://www.vinaqueiroz.com.br/intensivo" title="Curso">
+      <h3 class="guia">Conheça o meu curso</h3><p>⠀</p> <i class="fa-solid fa-share-from-square"></i>
+  </a>
+  <a class="guia" href="https://download.inep.gov.br/publicacoes/institucionais/avaliacoes_e_exames_da_educacao_basica/entenda_a_sua_nota_do_enem_guia_do_participante.pdf" target="_blank" title="Guia do Participante">
+      <h3 class="guia">Entenda a sua nota do Enem: Guia do participante</h3>
+  </a>
+  <div class="decoration2"></div>
+  <footer>
+      <a href="https://www.vinaqueiroz.com.br/intensivo">
+          <img src="../imgs/img2.png" alt="Logo">
+      </a>
+      <br>
+      <p>Vina Queiroz</p><br>
+      <h3>Contato:</h3><p>(77) 98155-7103 </p><br>
+      <h4>Me siga nas redes sociais:</h4>
+    <div class="social-icons">
+        <a href="https://www.instagram.com/descompliquesuaredacao/" target="_blank" title="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com/descompliquesuaredacao" target="_blank" title="Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.youtube.com/channel/UCO58xZNKR971NquoXhllhnw" target="_blank" title="YouTube">
+          <i class="fab fa-youtube"></i>
+        </a>
+      </div>
+    </footer>
+
+    <script>
+        // Função para alterar o peso
+        function alterarPeso(id, delta) {
+          const pesoInput = document.getElementById(id);
+          let pesoAtual = parseInt(pesoInput.value, 10);
+          pesoAtual = Math.max(1, pesoAtual + delta); // Peso mínimo é 1
+          pesoInput.value = pesoAtual;
+        }
+    
+        // Função para calcular a média ponderada
+        document.getElementById("calculatorForm").addEventListener("submit", function(event) {
+          event.preventDefault();
+    
+          const notas = [
+            parseFloat(document.getElementById("nota1").value),
+            parseFloat(document.getElementById("nota2").value),
+            parseFloat(document.getElementById("nota3").value),
+            parseFloat(document.getElementById("nota4").value),
+            parseFloat(document.getElementById("nota5").value)
+          ];
+    
+          const pesos = [
+            parseInt(document.getElementById("peso1").value, 10),
+            parseInt(document.getElementById("peso2").value, 10),
+            parseInt(document.getElementById("peso3").value, 10),
+            parseInt(document.getElementById("peso4").value, 10),
+            parseInt(document.getElementById("peso5").value, 10)
+          ];
+    
+          const somaPesos = pesos.reduce((acc, peso) => acc + peso, 0);
+          const mediaPonderada = notas.reduce((acc, nota, i) => acc + nota * pesos[i], 0) / somaPesos;
+    
+          document.getElementById("resultText").textContent = `Sua média é: ${mediaPonderada.toFixed(2)}`;
+          document.getElementById("popup").style.display = "flex";
+        });
+    
+        // Função para fechar a popup
+        function closePopup() {
+          document.getElementById("popup").style.display = "none";
+        }
+      </script>
+</body>
+</html>

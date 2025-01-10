@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descomplique SISU</title>
+    <link rel="stylesheet" href="../../../../styles/reset.css">
+    <link rel="stylesheet" href="../../../../styles/unistyles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" sizes="16x16"  href="imgs/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+    <header>
+        <a href="https://www.vinaqueiroz.com.br/intensivo">
+          <img src="../../../../imgs/img3.png" alt="Logo" id="persona">
+        </a>
+        <br><img src="../../../../imgs/img1.png" alt="Logo">
+    </header>
+    <div class="container">
+        <div class="decoration"></div>
+        <br>
+        <div class="box">
+            <h2>UFC</h2>
+            <div class="icones">
+              <i class="fa-solid fa-location-dot"></i><p>Fortaleza, Ceará</p>
+            </div>
+            <div class="icones">
+              <i class="fa-solid fa-calendar-days"></i><p>Integral</p>
+            </div>
+            <div class="box2">
+              <h3>Nota de corte:</h3>
+              <form>
+                <select id="modalidade" onchange="alterarNotaDeCorte()">
+                    <option value="default">Selecione...</option>
+                    <option value="ampla_concorrencia">Ampla Concorrência</option>
+                    <option value="escola_publica">Escola Pública</option>
+                    <option value="escola_publica_baixa_renda">Escola Pública e Baixa Renda</option>
+                    <option value="preto_pardo_indigena">Preto, Pardo e Indígena</option>
+                    <option value="preto_pardo_indigena_baixa_renda">Preto, Pardo e Indígena (Baixa Renda)</option>
+                    <option value="com_deficiencia">Pessoa com Deficiência</option>
+                </select>
+              </form>
+            <div class="nota" id="notaCorte">-</div>
+            </div>
+        </div>
+        <br>
+        <a class="voltar" href="../../../../index.html" title="Voltar">
+          <p class="voltar">Voltar</p>
+      </a>
+    </div>
+    <a class="guia" href="https://www.vinaqueiroz.com.br/intensivo" title="Curso">
+      <h3 class="guia">Conheça o meu curso</h3><p>⠀</p> <i class="fa-solid fa-share-from-square"></i>
+  </a>
+  <a class="guia" href="https://download.inep.gov.br/publicacoes/institucionais/avaliacoes_e_exames_da_educacao_basica/entenda_a_sua_nota_do_enem_guia_do_participante.pdf" target="_blank" title="Guia do Participante">
+      <h3 class="guia">Entenda a sua nota do Enem: Guia do participante</h3>
+  </a>
+  <div class="decoration2"></div>
+  <footer>
+      <a href="https://www.vinaqueiroz.com.br/intensivo">
+          <img src="../../../../imgs/img2.png" alt="Logo">
+      </a>
+      <br>
+      <p>Vina Queiroz</p><br>
+      <h3>Contato:</h3><p>(77) 98155-7103 </p><br>
+      <h4>Me siga nas redes sociais:</h4>
+    <div class="social-icons">
+        <a href="https://www.instagram.com/descompliquesuaredacao/" target="_blank" title="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com/descompliquesuaredacao" target="_blank" title="Facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://www.youtube.com/channel/UCO58xZNKR971NquoXhllhnw" target="_blank" title="YouTube">
+          <i class="fab fa-youtube"></i>
+        </a>
+      </div>
+    </footer>
+
+    <script>
+      // Função para alterar a nota de corte com base na modalidade selecionada
+      function alterarNotaDeCorte() {
+          const modalidade = document.getElementById("modalidade").value;
+          const notaCorte = document.getElementById("notaCorte");
+
+          // Define os valores de nota de corte para cada modalidade
+          let nota = "-"; // Valor padrão
+          switch (modalidade) {
+              case "ampla_concorrencia":
+                  nota = "804.76";
+                  break;
+              case "escola_publica":
+                  nota = "794.98";
+                  break;
+              case "escola_publica_baixa_renda":
+                  nota = "782.74";
+                  break;
+              case "preto_pardo_indigena":
+                  nota = "756.66";
+                  break;
+              case "preto_pardo_indigena_baixa_renda":
+                  nota = "743.36";
+                  break;
+              case "com_deficiencia":
+                  nota = "720.36";
+                  break;
+              default:
+                  nota = "-"; // Caso não tenha nenhuma modalidade selecionada
+          }
+
+          // Atualiza o valor exibido na página
+          notaCorte.textContent = nota;
+      }
+
+  </script>
+</body>
+</html>
